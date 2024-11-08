@@ -2,7 +2,7 @@ import React from "react";
 import { FaListAlt, FaCheckSquare,FaPlusSquare,FaTrash } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
-
+// Liens de navigation
 const NavFooter = ()=> (
     <footer className="d-flex justify-content-between p-3" id="mainFooter">
     <div className="btn-group w-100">
