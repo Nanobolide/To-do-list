@@ -13,7 +13,7 @@ const App = () => {
         
         {/* Liens de navigation */}
         <nav>
-          <NavLink to="/">Liste des Tâches</NavLink>
+          <NavLink to="/:filter?">Liste des Tâches</NavLink>
           <NavLink to="/add-task">Ajouter une tâche</NavLink>
         </nav>
         
