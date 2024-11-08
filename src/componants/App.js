@@ -1,30 +1,31 @@
 import React from 'react';
-import './style.css';
+import '../css/style.css';
 import ToDoList from './ToDoList';
 import NavFooter from './NavFooter';
 import AddTask from './AddTask';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import initialData from '../initialData';
 
+
+// Composant fonctionnel
 const App = () => { 
     return (
       <BrowserRouter>
       <section id="todo">
         <h1>Liste de Tâches</h1>
-        
+
         {/* Liens de navigation */}
-        <nav>
-          <NavLink to="/:filter?">Liste des Tâches</NavLink>
-          <NavLink to="/add-task">Ajouter une tâche</NavLink>
-        </nav>
-        
+
+
+            {/*  Définition des routes  dans app */}
         <Routes>
-          <Route path="/" element={<ToDoList />} />
+          <Route path="/" element={<ToDoList tasks={initialData} />} />
           <Route path="/add-task" element={<AddTask />} />
         </Routes>
 
         <NavFooter />
       </section>
-    </BrowserRouter>
+    </BrowserRouter> 
     );
 }
 
