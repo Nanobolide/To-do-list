@@ -2,18 +2,30 @@ import React from 'react';
 import './style.css';
 import ToDoList from './ToDoList';
 import NavFooter from './NavFooter';
+import AddTask from './AddTask';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 
-class App extends React.Component{
-    render(){
-      return (
-        <section id="todo">
+const App = () => { 
+    return (
+      <BrowserRouter>
+      <section id="todo">
         <h1>Liste de Tâches</h1>
-            <ToDoList />
-            <NavFooter />
-    </section>
-      )
-    }
-  }
+        
+        {/* Liens de navigation */}
+        <nav>
+          <NavLink to="/">Liste des Tâches</NavLink>
+          <NavLink to="/add-task">Ajouter une tâche</NavLink>
+        </nav>
+        
+        <Routes>
+          <Route path="/" element={<ToDoList />} />
+          <Route path="/add-task" element={<AddTask />} />
+        </Routes>
 
-  export default App
- 
+        <NavFooter />
+      </section>
+    </BrowserRouter>
+    );
+}
+
+export default App;
